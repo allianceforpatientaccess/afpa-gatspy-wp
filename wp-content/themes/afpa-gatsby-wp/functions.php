@@ -125,7 +125,7 @@ function cpt_generator()
 	cpt_factory('Regulatory Advocacy', 'regulatory-advocacy', false);
 
 	// Backpages
-	cpt_factory('Backpage', 'backpage');
+	cpt_factory('Custom Page', 'backpage');
 }
 add_action('init', 'cpt_generator');
 
@@ -369,3 +369,22 @@ function register_taxonomies()
 	register_taxonomy_for_object_type('category', 'legislative-advocacy');
 }
 add_action('init', 'register_taxonomies');
+
+/**
+ * Require thumbnail image (featured media) on specific
+ * post types.
+ */
+function featured_image_requirement($post_id)
+{
+	$post = get_post($post_id);
+
+	if ($post->post_status == 'publish' && !has_post_thumbnail($post_id) && get_post_type() == 'event') {
+		$post->post_status = 'draft';
+		wp_update_post($post);
+
+		$message = '<p>Please, add a thumbnail!</p>'
+			. '<p><a href="' . admin_url('post.php?post=' . $post_id . '&action=edit') . '">Go back and edit the post</a></p>';
+		wp_die($message, 'Error - Missing thumbnail!');
+	}
+}
+add_action('save_post', 'featured_image_requirement', -1);
