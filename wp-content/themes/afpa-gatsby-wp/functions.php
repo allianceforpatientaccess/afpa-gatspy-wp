@@ -206,19 +206,26 @@ function wpse_custom_menu_order($menu_ord)
 		'index.php',                                // Dashboard
 		'separator1',                               // First separator
 
+		// Home (index)
 		'edit.php?post_type=slider',                // Sliders
 		'edit.php?post_type=working-group',         // Working Groups
-		'edit.php?post_type=coalition',             // Coalitions
-		'edit.php?post_type=event',                 // Events
-		'edit.php?post_type=survey',  							// Surveys
 		'edit.php?post_type=home-resource',         // Resources
+		// About
 		'edit.php?post_type=annual-report',         // Annual Reports
 		'edit.php?post_type=guiding-principle',     // Guiding Principles
 		'edit.php?post_type=leadership',            // Leadership
+		// Events
+		'edit.php?post_type=event',                 // Events
+		// Surveys
+		'edit.php?post_type=survey',  							// Surveys
+		// Resources
 		'edit.php?post_type=video',                 // Video
 		'edit.php?post_type=infographic',           // Infographic
+		// Advocacy
 		'edit.php?post_type=legislative-advocacy',  // Legislative Advocacy
 		'edit.php?post_type=regulatory-advocacy',  	// Regulatory Advocacy
+		// Coalitions
+		'edit.php?post_type=coalition',             // Coalitions
 		'separator2',                               // Second separator
 
 		'edit.php?post_type=backpage',  						// Custom backpages
@@ -373,12 +380,14 @@ add_action('init', 'register_taxonomies');
 /**
  * Require thumbnail image (featured media) on specific
  * post types.
+ * - events
+ * - coalitions
  */
 function featured_image_requirement($post_id)
 {
 	$post = get_post($post_id);
 
-	if ($post->post_status == 'publish' && !has_post_thumbnail($post_id) && get_post_type() == 'event') {
+	if ($post->post_status == 'publish' && !has_post_thumbnail($post_id) && (get_post_type() == 'event' || get_post_type() == 'coalition')) {
 		$post->post_status = 'draft';
 		wp_update_post($post);
 
