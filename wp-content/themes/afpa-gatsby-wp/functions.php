@@ -183,13 +183,14 @@ function remove_menus()
 	remove_menu_page('users.php');                  // Users
 	remove_menu_page('tools.php');                  // Tools
 
+
 	// remove if not on local site (if deployed environment)
 	if (get_site_url() !== 'http://localhost/afpa') {
 		remove_menu_page('plugins.php');                          // Plugins
 		remove_menu_page('options-general.php');                  // Settings
 		remove_menu_page('edit.php?post_type=acf-field-group');   // Advanced Custom Fields
-		remove_menu_page('admin.php?page=ai1wm_export');					// All-in-One WP Migration
-		remove_menu_page('admin.php?page=wpengine-common');				// WP Engine
+		remove_menu_page('ai1wm_export');													// All-in-One WP Migration (@TODO not working)
+		remove_menu_page('wpengine-common');											// WP Engine (@TODO not working)
 
 	}
 }
@@ -202,7 +203,6 @@ function wpse_custom_menu_order($menu_ord)
 
 	return array(
 		// 'edit.php',                              // Posts
-		'admin.php?page=wpengine-common',           // WPEngine (not working)
 		'index.php',                                // Dashboard
 		'separator1',                               // First separator
 
@@ -231,6 +231,7 @@ function wpse_custom_menu_order($menu_ord)
 		'edit.php?post_type=backpage',  						// Custom backpages
 		'edit.php?post_type=page',                  // Pages
 		'upload.php',                               // Media
+		'admin.php?page=gf_edit_forms',							// Gravity Forms
 		'separator-last',                           // Last separator
 
 		// 'link-manager.php',                         // Links
