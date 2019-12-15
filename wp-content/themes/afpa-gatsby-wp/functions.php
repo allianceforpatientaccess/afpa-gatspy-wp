@@ -191,16 +191,16 @@ function remove_menus()
 		remove_menu_page('edit.php?post_type=acf-field-group');   // Advanced Custom Fields
 		remove_menu_page('ai1wm_export');													// All-in-One WP Migration (@TODO not working)
 		remove_menu_page('wpengine-common');											// WP Engine (@TODO not working)
-
 	}
 }
-add_action('admin_menu', 'remove_menus');
+add_action('admin_init', 'remove_menus');
 
-add_action('admin_init', 'the_dramatist_debug_admin_menu');
-function the_dramatist_debug_admin_menu()
-{
-	echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
-}
+// returns the sidebar widget info necessary for removing it in the above function
+// add_action('admin_init', 'the_dramatist_debug_admin_menu');
+// function the_dramatist_debug_admin_menu()
+// {
+// 	echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
+// }
 
 // menu order
 function wpse_custom_menu_order($menu_ord)
@@ -277,15 +277,11 @@ function order_new_content_node()
 {
 	global $wp_admin_bar;
 
-	// remove all the nodes
+	// remove all the nodes from the 'Add Post' dropdown
 	$wp_admin_bar->remove_node('new-post');
 	$wp_admin_bar->remove_node('new-media');
 	$wp_admin_bar->remove_node('new-page');
 	$wp_admin_bar->remove_node('new-user');
-	// $wp_admin_bar->remove_node('slider');
-	// $wp_admin_bar->remove_node('working-group');
-	// $wp_admin_bar->remove_node('coalition');
-	// $wp_admin_bar->remove_node('event');
 
 	// add them back in order
 	// $args = array(
