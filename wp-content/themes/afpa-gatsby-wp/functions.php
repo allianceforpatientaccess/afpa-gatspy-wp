@@ -196,6 +196,12 @@ function remove_menus()
 }
 add_action('admin_menu', 'remove_menus');
 
+add_action('admin_init', 'the_dramatist_debug_admin_menu');
+function the_dramatist_debug_admin_menu()
+{
+	echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
+}
+
 // menu order
 function wpse_custom_menu_order($menu_ord)
 {
