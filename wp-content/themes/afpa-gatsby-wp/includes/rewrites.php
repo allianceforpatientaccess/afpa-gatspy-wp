@@ -1,6 +1,5 @@
 <?php
 
-// Create new rewrite rule
 // TODO: not working
 // function login_rewrite()
 // {
