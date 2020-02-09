@@ -1,5 +1,4 @@
 <?php
-
 // TODO: not working
 // function login_rewrite()
 // {
