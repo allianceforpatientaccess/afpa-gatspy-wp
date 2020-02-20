@@ -12,5 +12,6 @@ function register_taxonomies()
 	register_taxonomy_for_object_type('post_tag', 'video');
 	register_taxonomy_for_object_type('post_tag', 'legislative-advocacy');
 	register_taxonomy_for_object_type('category', 'legislative-advocacy');
+	register_taxonomy_for_object_type('category', 'coalition');
 }
 add_action('init', 'register_taxonomies');
