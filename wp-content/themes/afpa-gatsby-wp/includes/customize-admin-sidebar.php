@@ -72,7 +72,7 @@ function wpse_custom_menu_order($menu_ord)
 
 		// 'link-manager.php',                         // Links
 		// 'edit-comments.php',                        // Comments
-		// 'themes.php',                               // Appearance
+		'themes.php',                               // Appearance
 		// 'plugins.php',                              // Plugins
 		// 'users.php',                                // Users
 		// 'tools.php',                                // Tools
