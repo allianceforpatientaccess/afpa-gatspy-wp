@@ -13,4 +13,3 @@ require_once __DIR__ . '/includes/disable-comments.php';
 require_once __DIR__ . '/includes/require-thumbnail-image.php';
 require_once __DIR__ . '/includes/theme-support.php';
 require_once __DIR__ . '/includes/taxonomy-support.php';
-require_once __DIR__ . '/includes/rewrites.php'; // TODO not working (intended for domain coherence on prod site)
