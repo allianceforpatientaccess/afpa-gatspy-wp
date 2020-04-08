@@ -115,6 +115,9 @@ function cpt_generator()
 	// Surveys
 	cpt_factory('Survey', 'survey');
 
+	// COVID-19 Resources
+	cpt_factory('COVID-19 Resource', 'covid-19');
+
 	// Advocacy
 	cpt_factory('Legislative Advocacy', 'legislative-advocacy', false);
 	cpt_factory('Regulatory Advocacy', 'regulatory-advocacy', false);

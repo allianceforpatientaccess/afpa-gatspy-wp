@@ -16,7 +16,7 @@ function remove_menus()
 
 	// remove if not on local site (if deployed environment)
 	if (get_site_url() !== 'http://localhost/afpa') {
-		remove_menu_page('plugins.php');                          // Plugins
+		// remove_menu_page('plugins.php');                          // Plugins
 		remove_menu_page('options-general.php');                  // Settings
 		remove_menu_page('edit.php?post_type=acf-field-group');   // Advanced Custom Fields
 		remove_menu_page('ai1wm_export');													// All-in-One WP Migration (@TODO not working)
@@ -54,6 +54,8 @@ function wpse_custom_menu_order($menu_ord)
 		'edit.php?post_type=event',                 // Events
 		// Surveys
 		'edit.php?post_type=survey',  							// Surveys
+		// COVID-19
+		'edit.php?post_type=covid-19',  						// COVID-19 Resources
 		// Resources
 		'edit.php?post_type=video',                 // Video
 		'edit.php?post_type=infographic',           // Infographic
@@ -73,7 +75,7 @@ function wpse_custom_menu_order($menu_ord)
 		// 'link-manager.php',                         // Links
 		// 'edit-comments.php',                        // Comments
 		'themes.php',                               // Appearance
-		// 'plugins.php',                              // Plugins
+		'plugins.php',                              // Plugins
 		// 'users.php',                                // Users
 		// 'tools.php',                                // Tools
 		'options-general.php',                      // Settings
