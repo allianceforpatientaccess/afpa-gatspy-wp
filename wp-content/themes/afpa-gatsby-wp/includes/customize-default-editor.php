@@ -10,6 +10,7 @@ function remove_editor()
 	remove_post_type_support('coalition', 'editor');
 	remove_post_type_support('event', 'editor');
 	remove_post_type_support('survey', 'editor');
+	remove_post_type_support('covid-19', 'editor');
 	remove_post_type_support('home-resource', 'editor');
 	remove_post_type_support('annual-report', 'editor');
 	remove_post_type_support('infographic', 'editor');
