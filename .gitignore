@@ -1,7 +1,6 @@
 # ignore everything
 /*
 
-# keep htaccess, readme, and the theme
+# keep htaccess and the theme
 !.htaccess
-!README.md
 !wp-content/themes/afpa-gatsby-wp/
