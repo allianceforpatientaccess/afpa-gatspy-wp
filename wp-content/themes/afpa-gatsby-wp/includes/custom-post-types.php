@@ -118,6 +118,9 @@ function cpt_generator()
 	// COVID-19 Resources
 	cpt_factory('COVID-19 Resource', 'covid-19');
 
+	// Co-pay Accumulator Resources
+	cpt_factory('Co-pay Resource', 'copay');
+
 	// Advocacy
 	cpt_factory('Legislative Advocacy', 'legislative-advocacy', false);
 	cpt_factory('Regulatory Advocacy', 'regulatory-advocacy', false);

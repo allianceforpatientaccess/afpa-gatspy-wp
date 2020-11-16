@@ -56,6 +56,8 @@ function wpse_custom_menu_order($menu_ord)
 		'edit.php?post_type=survey',  							// Surveys
 		// COVID-19
 		'edit.php?post_type=covid-19',  						// COVID-19 Resources
+		// Co-pay Accumulator
+		'edit.php?post_type=copay',  								// Co-pay Accumulator Resources
 		// Resources
 		'edit.php?post_type=video',                 // Video
 		'edit.php?post_type=infographic',           // Infographic
