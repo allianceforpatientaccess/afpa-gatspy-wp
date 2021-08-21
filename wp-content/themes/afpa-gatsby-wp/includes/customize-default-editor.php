@@ -10,14 +10,17 @@ function remove_editor()
 	remove_post_type_support('coalition', 'editor');
 	remove_post_type_support('event', 'editor');
 	remove_post_type_support('survey', 'editor');
-	remove_post_type_support('covid-19', 'editor');
-	remove_post_type_support('icer-resource', 'editor');
 	remove_post_type_support('copay', 'editor');
 	remove_post_type_support('home-resource', 'editor');
 	remove_post_type_support('annual-report', 'editor');
 	remove_post_type_support('infographic', 'editor');
 	remove_post_type_support('legislative-advocacy', 'editor');
 	remove_post_type_support('regulatory-advocacy', 'editor');
+
+	// event/one-off CPTs
+	remove_post_type_support('covid-19', 'editor');
+	remove_post_type_support('icer-resource', 'editor');
+	remove_post_type_support('icer-speaker', 'editor');
 
 	// remove for specific page templates (e.g. everything but "About")
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
