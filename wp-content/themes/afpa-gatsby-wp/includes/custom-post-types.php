@@ -115,8 +115,10 @@ function cpt_generator()
 	// Surveys
 	cpt_factory('Survey', 'survey');
 
-	// COVID-19 Resources
-	cpt_factory('COVID-19 Resource', 'covid-19');
+	// Custom Backpages
+	cpt_factory('COVID-19 Resource', 'covid-19'); // COVID-19 Resources
+	cpt_factory('ICER Resource', 'icer-resource'); // ICER Resources
+	cpt_factory('ICER Speaker', 'icer-speaker'); // ICER Speakers
 
 	// Co-pay Accumulator Resources
 	cpt_factory('Co-pay Resource', 'copay');

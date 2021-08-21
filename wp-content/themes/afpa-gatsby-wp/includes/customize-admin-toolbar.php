@@ -15,7 +15,6 @@ function customize_toolbar()
 		'id'    =>  'contact-developer',
 		'title'    =>  'Contact Developer',
 		'href'    =>  'mailto:avi@allianceforpatientaccess.org',
-
 	));
 }
 add_action('wp_before_admin_bar_render', 'customize_toolbar');

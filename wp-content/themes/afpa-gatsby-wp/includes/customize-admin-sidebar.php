@@ -10,8 +10,8 @@ function remove_menus()
 {
 	remove_menu_page('edit.php');                   // Posts
 	remove_menu_page('edit-comments.php');          // Comments
-	// remove_menu_page('themes.php');                 // Appearance
-	// remove_menu_page('users.php');                  // Users
+	// remove_menu_page('themes.php');              // Appearance
+	// remove_menu_page('users.php');               // Users
 	remove_menu_page('tools.php');                  // Tools
 
 	// remove if not on local site (if deployed environment)
@@ -56,6 +56,9 @@ function wpse_custom_menu_order($menu_ord)
 		'edit.php?post_type=survey',  							// Surveys
 		// COVID-19
 		'edit.php?post_type=covid-19',  						// COVID-19 Resources
+		// ICER
+		'edit.php?post_type=icer-resource',					// ICER Resources
+		'edit.php?post_type=icer-speaker', 					// ICER Speakers
 		// Co-pay Accumulator
 		'edit.php?post_type=copay',  								// Co-pay Accumulator Resources
 		// Resources
