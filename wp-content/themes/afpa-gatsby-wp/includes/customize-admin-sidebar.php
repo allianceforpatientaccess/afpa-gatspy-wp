@@ -3,9 +3,12 @@
 /**
  * Customize the admin sidebar.
  *
- * 1.) Remove unnecessary menu items from the menu object.
- * 2.) Order the menu appropriately
+ * 1. Remove unnecessary menu items from the menu object.
+ * 2. Organize the menu.
+ * 3. Order the menu. (This can also be done during the CPT init phase w/ `register_post_type`, but it's too late now.)
  */
+
+// menu pruning
 function remove_menus()
 {
 	remove_menu_page('edit.php');                   // Posts
@@ -25,15 +28,63 @@ function remove_menus()
 }
 add_action('admin_init', 'remove_menus');
 
-// returns the sidebar widget info necessary for removing it in the above function
-// add_action('admin_init', 'the_dramatist_debug_admin_menu');
-// function the_dramatist_debug_admin_menu()
-// {
-// 	echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
-// }
+// menu organization (top-level menu items, for the CPTs to nest under)
+function organize_admin_menu()
+{
+	// home page
+	add_menu_page(
+		'Home Page',
+		'Home Page',
+		'read',
+		'home',
+		'', // empty callback, as there's no associated CPT w/ these "section headers"
+		'dashicons-admin-home'
+	);
+
+	// resources page
+	add_menu_page(
+		'Resources Page',
+		'Resources Page',
+		'read',
+		'resources',
+		'',
+		'dashicons-database-add'
+	);
+
+	// advocacy page
+	add_menu_page(
+		'Advocacy Page',
+		'Advocacy Page',
+		'read',
+		'advocacy',
+		'',
+		'dashicons-edit'
+	);
+
+	// about page
+	add_menu_page(
+		'About Page',
+		'About Page',
+		'read',
+		'about',
+		'',
+		'dashicons-info-outline'
+	);
+
+	// ICER event page
+	add_menu_page(
+		'ICER Event Page',
+		'ICER Event Page',
+		'read',
+		'icer',
+		'',
+		'dashicons-calendar'
+	);
+}
+add_action('admin_menu', 'organize_admin_menu');
 
 // menu order
-function wpse_custom_menu_order($menu_ord)
+function apply_custom_menu_order($menu_ord)
 {
 	if (!$menu_ord) return true;
 
@@ -42,35 +93,26 @@ function wpse_custom_menu_order($menu_ord)
 		'index.php',                                // Dashboard
 		'separator1',                               // First separator
 
-		// Home (index)
-		'edit.php?post_type=slider',                // Sliders
-		'edit.php?post_type=working-group',         // Working Groups
-		'edit.php?post_type=home-resource',         // Resources
-		// About
-		'edit.php?post_type=annual-report',         // Annual Reports
-		'edit.php?post_type=guiding-principle',     // Guiding Principles
-		'edit.php?post_type=leadership',            // Leadership
-		// Events
-		'edit.php?post_type=event',                 // Events
-		// Surveys
-		'edit.php?post_type=survey',  							// Surveys
-		// COVID-19
-		'edit.php?post_type=covid-19',  						// COVID-19 Resources
-		// ICER
-		'edit.php?post_type=icer-resource',					// ICER Resources
-		'edit.php?post_type=icer-speaker', 					// ICER Speakers
-		// Co-pay Accumulator
-		'edit.php?post_type=copay',  								// Co-pay Accumulator Resources
-		// Resources
-		'edit.php?post_type=video',                 // Video
-		'edit.php?post_type=infographic',           // Infographic
-		// Advocacy
-		'edit.php?post_type=legislative-advocacy',  // Legislative Advocacy
-		'edit.php?post_type=regulatory-advocacy',  	// Regulatory Advocacy
-		// Coalitions
-		'edit.php?post_type=coalition',             // Coalitions
+
+		// Main pages w/ multiple CPTs (nested menus)
+		'home',                											// Home (index): Sliders, Working Groups, Home Resources
+		'about',         														// About: Annual Reports, Guiding Principles, Leadership
+		'resources',                 								// Resources: Video, Infographic
+		'advocacy',  																// Advocacy: Legislative Advocacy, Regulatory Advocacy
 		'separator2',                               // Second separator
 
+
+		// individual
+		'edit.php?post_type=event',                 // Events
+		'edit.php?post_type=survey',  							// Surveys
+		'edit.php?post_type=copay',  								// Co-pay Accumulator Resources
+		'edit.php?post_type=coalition',             // Coalitions
+
+		// special event/one-offs
+		'edit.php?post_type=covid-19',  						// COVID-19 Resources
+		'icer',																			// ICER: ICER Resources, ICER Speakers
+
+		// Generic Pages & Functionality
 		'edit.php?post_type=backpage',  						// Custom backpages
 		'edit.php?post_type=page',                  // Pages
 		'upload.php',                               // Media
@@ -86,5 +128,5 @@ function wpse_custom_menu_order($menu_ord)
 		'options-general.php',                      // Settings
 	);
 }
-add_filter('custom_menu_order', 'wpse_custom_menu_order', 10, 1);
-add_filter('menu_order', 'wpse_custom_menu_order', 10, 1);
+add_filter('custom_menu_order', 'apply_custom_menu_order');
+add_filter('menu_order', 'apply_custom_menu_order');
