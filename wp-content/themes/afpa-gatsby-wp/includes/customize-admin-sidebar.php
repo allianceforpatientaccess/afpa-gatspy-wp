@@ -22,8 +22,8 @@ function remove_menus()
 		// remove_menu_page('plugins.php');                          // Plugins
 		remove_menu_page('options-general.php');                  // Settings
 		remove_menu_page('edit.php?post_type=acf-field-group');   // Advanced Custom Fields
-		remove_menu_page('ai1wm_export');													// All-in-One WP Migration (@TODO not working)
-		remove_menu_page('wpengine-common');											// WP Engine (@TODO not working)
+		remove_menu_page('ai1wm_export');													// All-in-One WP Migration (TODO not working)
+		remove_menu_page('wpengine-common');											// WP Engine (TODO not working)
 	}
 }
 add_action('admin_init', 'remove_menus');
@@ -59,6 +59,26 @@ function organize_admin_menu()
 		'advocacy',
 		'',
 		'dashicons-edit'
+	);
+	add_submenu_page(
+		'advocacy',
+		'add_advocacy_tags_to_admin',
+		'Tags',
+		'read',
+		get_home_url() . '/wp-admin/edit-tags.php?taxonomy=post_tag',
+		'',
+		'dashicons-text',
+		1
+	);
+	add_submenu_page(
+		'advocacy',
+		'add_advocacy_categories_to_admin',
+		'Categories',
+		'read',
+		get_home_url() . '/wp-admin/edit-tags.php?taxonomy=category',
+		'',
+		'dashicons-text',
+		1
 	);
 
 	// about page
