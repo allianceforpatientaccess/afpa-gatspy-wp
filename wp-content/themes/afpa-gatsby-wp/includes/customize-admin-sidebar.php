@@ -114,11 +114,12 @@ function apply_custom_menu_order($menu_ord)
 		'separator1',                               // First separator
 
 
-		// Main pages w/ multiple CPTs (nested menus)
+		// Pages w/ multiple CPTs (nested menus)
 		'home',                											// Home (index): Sliders, Working Groups, Home Resources
 		'about',         														// About: Annual Reports, Guiding Principles, Leadership
 		'resources',                 								// Resources: Video, Infographic
 		'advocacy',  																// Advocacy: Legislative Advocacy, Regulatory Advocacy
+		'edit.php?post_type=covid-19',  						// COVID-19 Resources
 		'separator2',                               // Second separator
 
 
@@ -128,8 +129,7 @@ function apply_custom_menu_order($menu_ord)
 		'edit.php?post_type=copay',  								// Co-pay Accumulator Resources
 		'edit.php?post_type=coalition',             // Coalitions
 
-		// special event/one-offs
-		'edit.php?post_type=covid-19',  						// COVID-19 Resources
+		// special event/one-offs (w/ single CPT)
 		'icer',																			// ICER: ICER Resources, ICER Speakers
 
 		// Generic Pages & Functionality
