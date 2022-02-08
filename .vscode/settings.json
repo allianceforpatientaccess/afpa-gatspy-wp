@@ -1,0 +1,10 @@
+{
+	// PHP
+	"intelephense.environment.phpVersion": "7.4",
+
+	// Markdown
+	// NOTE it would be nice to handle this on a per-file basis, instead of universally
+	"markdownlint.config": {
+		"MD041": false
+	}
+}
