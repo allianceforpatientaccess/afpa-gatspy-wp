@@ -119,7 +119,8 @@ function apply_custom_menu_order($menu_ord)
 		'about',         														// About: Annual Reports, Guiding Principles, Leadership
 		'resources',                 								// Resources: Video, Infographic
 		'advocacy',  																// Advocacy: Legislative Advocacy, Regulatory Advocacy
-		'edit.php?post_type=covid-19',  						// COVID-19 Resources
+		'edit.php?post_type=neutropenia-resource',  // Neutropenia (prev. COVID-19) Resources
+		'edit.php?post_type=asthma-resource',				// Asthma (prev. ICER) Resources
 		'separator2',                               // Second separator
 
 
@@ -130,7 +131,7 @@ function apply_custom_menu_order($menu_ord)
 		'edit.php?post_type=coalition',             // Coalitions
 
 		// special event/one-offs (w/ single CPT)
-		'icer',																			// ICER: ICER Resources, ICER Speakers
+		'icer',																			// ICER: ICER Resources, ICER Speakers // ! ICER Speakers no longer enabled
 
 		// Generic Pages & Functionality
 		'edit.php?post_type=backpage',  						// Custom backpages
@@ -144,7 +145,7 @@ function apply_custom_menu_order($menu_ord)
 		'themes.php',                               // Appearance
 		'plugins.php',                              // Plugins
 		// 'users.php',                                // Users
-		// 'tools.php',                                // Tools
+		'tools.php',                                // Tools
 		'options-general.php',                      // Settings
 	);
 }

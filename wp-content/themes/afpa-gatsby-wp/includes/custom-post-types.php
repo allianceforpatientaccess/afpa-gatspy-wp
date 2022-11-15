@@ -120,10 +120,9 @@ function cpt_generator()
 
   // Custom Backpages  & One-offs
   cpt_factory('Custom Page', 'backpage');
-  cpt_factory('Neutropenia Resource', 'neutropenia', true); // Neutropenia (prev. COVID-19) Resources
-  cpt_factory('Asthma Resource', 'asthma-resource', true, 'icer'); // Asthma (prev. ICER) Resources
+  cpt_factory('Neutropenia Resource', 'neutropenia-resource', true); // Neutropenia (prev. COVID-19) Resources
+  cpt_factory('Asthma Resource', 'asthma-resource', true); // Asthma (prev. ICER) Resources
   cpt_factory('ICER Resource', 'icer-resource', true, 'icer'); // ICER Resources
   // cpt_factory('ICER Speaker', 'icer-speaker', true, 'icer'); // ICER Speakers // NOTE no longer in use
-  // test diff for push to staging
 }
 add_action('init', 'cpt_generator');
