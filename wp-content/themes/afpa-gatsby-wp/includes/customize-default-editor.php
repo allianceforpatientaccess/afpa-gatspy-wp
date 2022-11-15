@@ -18,9 +18,10 @@ function remove_editor()
 	remove_post_type_support('regulatory-advocacy', 'editor');
 
 	// event/one-off CPTs
-	remove_post_type_support('covid-19', 'editor');
+	remove_post_type_support('neutropenia-resource', 'editor');
+	remove_post_type_support('asthma-resource', 'editor');
 	remove_post_type_support('icer-resource', 'editor');
-	remove_post_type_support('icer-speaker', 'editor');
+	// remove_post_type_support('icer-speaker', 'editor');
 
 	// remove for specific page templates (e.g. everything but "About")
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
