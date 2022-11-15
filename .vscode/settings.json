@@ -6,5 +6,6 @@
 	// NOTE it would be nice to handle this on a per-file basis, instead of universally
 	"markdownlint.config": {
 		"MD041": false
-	}
+	},
+	"cSpell.words": ["icer", "neutropenia"]
 }
