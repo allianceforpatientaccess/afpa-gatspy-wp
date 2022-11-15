@@ -15,7 +15,7 @@ function remove_menus()
 	remove_menu_page('edit-comments.php');          // Comments
 	// remove_menu_page('themes.php');              // Appearance
 	// remove_menu_page('users.php');               // Users
-	remove_menu_page('tools.php');                  // Tools
+	// remove_menu_page('tools.php');                  // Tools
 
 	// remove if not on local site (if deployed environment)
 	if (get_site_url() !== 'http://localhost/afpa') {
@@ -93,8 +93,8 @@ function organize_admin_menu()
 
 	// ICER event page
 	add_menu_page(
-		'ICER Event Page',
-		'ICER Event Page',
+		'ICER Page',
+		'ICER Page',
 		'read',
 		'icer',
 		'',
@@ -144,7 +144,7 @@ function apply_custom_menu_order($menu_ord)
 		// 'edit-comments.php',                        // Comments
 		'themes.php',                               // Appearance
 		'plugins.php',                              // Plugins
-		// 'users.php',                                // Users
+		'users.php',                                // Users
 		'tools.php',                                // Tools
 		'options-general.php',                      // Settings
 	);

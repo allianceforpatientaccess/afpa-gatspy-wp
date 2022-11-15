@@ -118,7 +118,7 @@ function cpt_generator()
   cpt_factory('Co-pay Resource', 'copay');  // Co-pay Accumulator Resources
   cpt_factory('Coalition', 'coalition');  // Coalitions
 
-  // Custom Backpages  & One-offs
+  // Custom Backpages & One-offs
   cpt_factory('Custom Page', 'backpage');
   cpt_factory('Neutropenia Resource', 'neutropenia-resource', true); // Neutropenia (prev. COVID-19) Resources
   cpt_factory('Asthma Resource', 'asthma-resource', true); // Asthma (prev. ICER) Resources
