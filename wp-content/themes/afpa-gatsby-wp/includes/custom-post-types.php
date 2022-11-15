@@ -120,7 +120,6 @@ function cpt_generator()
 
   // Custom Backpages & One-offs
   cpt_factory('Custom Page', 'backpage');
-  cpt_factory('COVID-19 Resource', 'covid-19'); // Neutropenia (prev. COVID-19) Resources
   cpt_factory('Neutropenia Resource', 'neutropenia-resource', true); // Neutropenia (prev. COVID-19) Resources
   cpt_factory('Asthma Resource', 'asthma-resource', true); // Asthma (prev. ICER) Resources
   cpt_factory('ICER Resource', 'icer-resource', true, 'icer'); // ICER Resources
